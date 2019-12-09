@@ -1,16 +1,10 @@
-# =======================================
-# Gateway-service Server Configuration
-# =======================================
-
-# --- Spring Config
 spring:
   application:
-    name: gateway-service
+    name: Zuul-gateway
 
 server:
   port: 8762
 
-# Eureka client
 eureka:
   client:
     serviceUrl:
@@ -18,7 +12,6 @@ eureka:
 
 zuul:
   routes:
-  ## So, if request is "/user/v1/user/tedkim", user service will get "/v1/user/tedkim".
     account-service:
       path: /account/**
       service-id: account
